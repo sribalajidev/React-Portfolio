@@ -1,0 +1,27 @@
+# Dependency directories
+node_modules/
+bower_components/
+package-lock.json
+
+# Optional npm cache directory
+.npm
+
+# Compiled output
+/build
+/dist
+
+# Local development env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE and editor files
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
