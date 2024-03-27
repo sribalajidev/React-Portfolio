@@ -1,0 +1,173 @@
+@import '../../styles/variable.scss';
+
+.banner-component {
+  padding-top: 45px;
+  overflow: hidden;
+  position: relative;
+  .current-org {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    max-width: 270px;
+    font-weight: 600;
+    z-index: 9;
+    &::before {
+      display: block;
+      position: relative;
+      content: '';
+      width: 36px;
+      height: 36px;
+      background: url(../../assets/images/quote-up.png) no-repeat;
+      background-size: contain;
+      margin-bottom: 15px;
+    }
+    p {
+      margin: 0;
+      color: $color-font;
+      span { 
+        color: $color-primary;
+      }
+    }
+  }
+  .total-exp {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    max-width: 250px;
+    text-align: right;
+    p {
+      margin: 0;
+      color: $color-font;
+      font-weight: 600;
+      span { 
+        color: $color-primary;
+        font-size: 38px;
+        font-weight: bold;
+      }
+    }
+  }
+  .float-icon {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 100%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 20px 0px;
+    background-color: $color-white;
+    z-index: 9;
+    animation-name: floating;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    &:nth-child(1) {
+      top: 50%;
+      left: 25%;
+      transform: translateY(-50%);
+      animation-delay: 1s;
+    }
+    &:nth-child(2) {
+      top: 50%;
+      right: 25%;
+      transform: translateY(-50%);
+      animation-delay: 3s;
+    }
+    &:nth-child(3) {
+      top: 80%;
+      left: 20%;
+      transform: translateY(-50%);
+      animation-delay: 2s;
+    }
+    &:nth-child(4) {
+      top: 80%;
+      right: 20%;
+      transform: translateY(-50%);
+      animation-delay: 4s;
+    }
+  }
+  @keyframes floating {
+    from { transform: translate(0,  0px); }
+    65%  { transform: translate(0, 10px); }
+    to   { transform: translate(0, -0px); }    
+  }
+  .banner-info-wrapper {
+    text-align: center;
+    .banner-welcome {
+      padding: 8px 15px;
+      border: 1px solid #000;
+      border-radius: 40px;
+    }
+    h3 {
+      font-size: 72px;
+      font-weight: 500;
+      margin: 40px 0 -50px;
+      line-height: 1;
+      color: $color-font;
+      span { 
+        color: $color-primary;
+      }
+    }
+  }
+  .banner-info-img {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    max-height: 500px;
+    &:before {
+      position: absolute;
+      content: "";
+      bottom: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: #FD853A;
+      border-radius: 100%;
+      z-index: -1;
+      opacity: 0.75;
+    }
+    img {
+      max-width: 400px;
+      margin: 00 auto 0;
+      z-index: 9;
+
+    }
+    .floating-cta {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      ul {
+        display: flex;
+        gap: 20px;
+        padding: 8px 12px;
+        border: 1px solid $color-white;
+        border-radius: 40px;
+        background: rgb(255 255 255 / 20%);
+        backdrop-filter: blur(2px);
+        .btn-cta {
+          padding: 8px 12px;
+          display: block;
+          color: $color-white;
+          font-size: 16px;
+          &.btn-cv {
+            background: $color-primary;
+            padding: 8px 40px 8px 12px;
+            border-radius: 40px;
+            position: relative;
+            &::before {
+              position: absolute;
+              content: '\2192';
+              top: 50%;
+              right: 15px;
+              transform: translateY(-50%) rotate(-45deg);
+              font-size: 21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

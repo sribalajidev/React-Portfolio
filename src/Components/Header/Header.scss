@@ -1,0 +1,65 @@
+@import '../../styles/variable.scss';
+
+.main-navigation {
+  position: sticky;
+  top: 0;
+  padding: 0 40px;
+  background: $color-white;
+  margin-top: 20px;
+  border-radius: 50px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  .site-brand-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+  }
+  .nav-items {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    .nav-link {
+      font-size: 16px;
+      padding: 0 20px;
+      position: relative;
+      &:nth-child(3) {
+        margin-left: auto;
+      }
+      a {
+        color: $color-font;
+        font-weight: bold;
+        opacity: 0.5;
+        transition: all 0.5s ease;
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        &::before, &::after {
+          position: absolute;
+          font-size: 18px;
+          top: 0;
+          color: $color-primary;
+        }
+        &::before {
+          content: '<';
+          left: 5px;
+        }
+        &::after {
+          content: '/>';
+          right: -5px;
+        }
+        a {
+          opacity: 1;
+          color: $color-primary;
+        }
+      }
+    }
+  }
+}
